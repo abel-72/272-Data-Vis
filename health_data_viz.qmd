@@ -31,4 +31,10 @@ ggplot(health_data, aes (x=BMI)) +
   theme_minimal()
 ```
 
+```{r}
+val_cor <- health_data %>% select(BMI,Age,TotChol) %>%
+  cor(use = "complete.obs")
+ggcorr(val_cor, label = TRUE, label_alpha = TRUE)
+```
+
 Look at this handy guide to[Quarto](https://quarto.or/docs/guide)
